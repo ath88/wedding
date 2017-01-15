@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-    background-image: url('../img/header-bg.jpg');
+    background-image: url('../img/us/1.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -183,6 +183,13 @@ header {
             font-size: 22px;
             line-height: 22px;
             margin-bottom: 25px;
+        }
+        .intro-sub-lead-in {
+            .serif-font;
+            font-style: italic;
+            font-size: 12px;
+            line-height: 12px;
+            margin-bottom: 12px;
         }
         .intro-heading {
             .heading-font;
@@ -288,8 +295,8 @@ section {
                     h4 {
                         margin: 0;
                     }
-                }                
-            }            
+                }
+            }
         }
         .portfolio-caption {
             max-width: 400px;
@@ -532,58 +539,6 @@ aside.clients {
     }
 }
 
-// Contact Section
-
-section#contact {
-    background-color: @gray-darker;
-    background-image: url('../img/map-image.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    .section-heading {
-        color: white;
-    }
-    .form-group {
-        margin-bottom: 25px;
-        input,
-        textarea {
-            padding: 20px;
-        }
-        input.form-control {
-            height: auto;
-        }
-        textarea.form-control {
-            height: 236px;
-        }
-    }
-    .form-control:focus {
-        border-color: @theme-primary;
-        box-shadow: none;
-    }
-    ::-webkit-input-placeholder {
-       .heading-font;
-       font-weight: 700;
-       color: @gray-lighter;
-    }
-    :-moz-placeholder { /* Firefox 18- */
-       .heading-font;
-       font-weight: 700;
-       color: @gray-lighter;
-    }
-    ::-moz-placeholder {  /* Firefox 19+ */
-       .heading-font;
-       font-weight: 700;
-       color: @gray-lighter;
-    }
-    :-ms-input-placeholder {  
-       .heading-font;
-       font-weight: 700;
-       color: @gray-lighter;
-    }
-    .text-danger {
-        color: @theme-danger;
-    }
-}
-
 // Footer
 
 footer {
@@ -704,8 +659,8 @@ ul.social-buttons {
                 -webkit-transform: rotate(90deg);
                 /* Safari and Chrome */
                 z-index:1052;
-            }            
-        }        
+            }
+        }
     }
     .modal-backdrop {
         opacity: 0;
