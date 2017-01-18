@@ -7,6 +7,20 @@ body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+div.map {
+  width: 320px;
+  height: 250px;
+  margin: 0 auto;
+}
+.top-buffer-5 {
+  margin-top: 50px;
+}
+.top-buffer-3 {
+  margin-top: 30px;
+}
+.top-buffer-1 {
+  margin-top: 10px;
+}
 .text-muted {
   color: #777777;
 }
@@ -695,4 +709,18 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: #dcbf5e;
+}
+a[href^="http://maps.google.com/maps"] {
+  display: none !important;
+}
+a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+  display: none;
+}
+.gmnoprint div {
+  background: none !important;
 }
