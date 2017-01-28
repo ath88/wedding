@@ -37,7 +37,7 @@ var places = {
     reception: new google.maps.LatLng(55.771750, 12.450945),
     fest: new google.maps.LatLng(55.017694, 11.877959),
     overnatning1: new google.maps.LatLng(55.008302, 11.911308),
-    overnatning2: new google.maps.LatLng(55.024054, 11.898026)
+    overnatning2: new google.maps.LatLng(55.024118, 11.898142)
 };
 
 for (var place in places) {
