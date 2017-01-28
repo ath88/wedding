@@ -34,8 +34,8 @@
 
 var places = {
     vielse: new google.maps.LatLng(55.769348, 12.451729),
-    reception: new google.maps.LatLng(55.7717256, 12.4507801),
-    fest: new google.maps.LatLng(55.016741, 11.875907),
+    reception: new google.maps.LatLng(55.771750, 12.450945),
+    fest: new google.maps.LatLng(55.017694, 11.877959),
     overnatning1: new google.maps.LatLng(55.008302, 11.911308),
     overnatning2: new google.maps.LatLng(55.024054, 11.898026)
 };
@@ -46,7 +46,8 @@ for (var place in places) {
     var mapCanvas = document.getElementById(place);
     var mapOptions = {
         center: position,
-        zoom: 15,
+        zoom: 16,
+        mapTypeId: "OSM",
         scrollwheel: false,
         draggable: false,
         panControl: false,
@@ -63,4 +64,22 @@ for (var place in places) {
         position: position,
         map: map
     });
+
+    map.mapTypes.set("OSM", new google.maps.ImageMapType({
+        getTileUrl: function(coord, zoom) {
+            // "Wrap" x (logitude) at 180th meridian properly
+            // NB: Don't touch coord.x because coord param is by reference, and changing its x property breakes something in Google's lib
+            var tilesPerGlobe = 1 << zoom;
+            var x = coord.x % tilesPerGlobe;
+            if (x < 0) {
+                x = tilesPerGlobe+x;
+            }
+            // Wrap y (latitude) in a like manner if you want to enable vertical infinite scroll
+
+            return "http://tile.openstreetmap.org/" + zoom + "/" + x + "/" + coord.y + ".png";
+        },
+        tileSize: new google.maps.Size(256, 256),
+        name: "OpenStreetMap",
+        maxZoom: 18
+    }));
 }
